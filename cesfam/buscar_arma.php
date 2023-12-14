@@ -16,7 +16,7 @@ $regiones=EjecutarConsulta($CadSql,$link);
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Buscar Paciente</title>
+	<title>Buscar Arma</title>
 	<?php 
 	include("php/links.php");
 	?>

@@ -1,45 +1,36 @@
 <div id="menu">
 	<ul id="menu_principal">
     <li><a href="index.php">Inicio</a></li>
-		<li><a href="#">Pacientes</a>
+
+		<li><a href="armas.php">Armas</a>
 			<ul>
-				<li><a href="reg_paciente.php">Registro</a></li>
-				<li><a href="buscar_paciente.php">Buscar</a></li>
-				<li><a href="listado_pacientes.php">Listado</a></li>
+				<li><a href="reg_arma.php">Registro</a></li>
+				<li><a href="buscar_arma.php">Buscar</a></li>
+				<li><a href="listado_armas.php">Listado</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Profesionales</a>
+
+		<li><a href="#">Municion</a>
 			<ul>
 				<li><a href="#">Registro</a></li>
 				<li><a href="#">Buscar</a></li>
 				<li><a href="#">Listado</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Trabajador</a>
+
+		<li><a href="#">Accesorios</a>
 			<ul>
 				<li><a href="#">Registro</a></li>
 				<li><a href="#">Buscar</a></li>
 				<li><a href="#">Listado</a></li>
 			</ul>
 		</li>
-		<li><a href="#">Reportes</a>
+
+    <li><a href="#">Equipamiento</a>
 			<ul>
-				<li><a href="#">Pacientes</a>
-					<ul>
-						<li><a href="#">Inscritos</a></li>
-						<li><a href="#">Adcritos</a></li>
-					</ul>
-				</li>
-				<li><a href="#">Profesionales</a>
-					<ul>
-						<li><a href="#">Turno día</a>
-							<ul>
-								<li></li>
-							</ul>
-						</li>
-						<li><a href="#">Turno extensión</a></li>
-					</ul>
-				</li>
+				<li><a href="#">Registro</a></li>
+				<li><a href="#">Buscar</a></li>
+				<li><a href="#">Listado</a></li>
 			</ul>
 		</li>
 	</ul>

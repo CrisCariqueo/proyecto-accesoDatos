@@ -1,13 +1,13 @@
 <?php
 include("php/conexionBD.php");
 $link=AbrirConexion();
-$CadSql="Select a.cod_tipo_sangre,a.des_tipo_sangre from tipo_sangre a;";
+$CadSql="Select a.cod_bala, a.des_calibre_municion from bala a;";
 
-$tipo_sangre=EjecutarConsulta($CadSql,$link);
+$bala=EjecutarConsulta($CadSql,$link);
 
-$CadSql="Select a.cod_region,a.des_region from region a;";
+$CadSql="Select a.cod_categoria_arma, a.des_categoria_arma from categoria_arma a;";
 
-$regiones=EjecutarConsulta($CadSql,$link);
+$categoria_arma=EjecutarConsulta($CadSql,$link);
 
 ?>
 
@@ -16,7 +16,7 @@ $regiones=EjecutarConsulta($CadSql,$link);
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Gestión CESFAM</title>
+	<title>Gestión Armeria</title>
 	<?php 
 	include("php/links.php");
 	?>
@@ -38,6 +38,7 @@ $regiones=EjecutarConsulta($CadSql,$link);
 			<br><br>
 		</div>
 	</div>
+	
 	<div class="row contenido">
 		<div class="col-sm-12 text-center">
 			<form name="frmPaciente" action="guardar_paciente.php" method="POST">
