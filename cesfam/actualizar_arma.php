@@ -44,7 +44,7 @@
 				$stock=$_POST["cantidadStock"];
 				$precio=$_POST["precio"];
 
-				if(isset($_POST["cmdModificarProducto"]))
+				if(isset($_POST["cmdModificarArma"]))
 					{
 						$CadSql="update arma set ";
 						$CadSql.=" nombre_arma='".$nombre."',";
@@ -58,7 +58,7 @@
 						$CadSql.=" where cod_arma='".$id."';";
 						$mensaje="Producto modificado exitosamente";
 					}
-					else if(isset($_POST["cmdEliminarProducto"]))
+					else if(isset($_POST["cmdEliminarArma"]))
 					{
 						$CadSql="Delete from arma where cod_arma='".$id."';";
 						$mensaje="Producto eliminado correctamente";

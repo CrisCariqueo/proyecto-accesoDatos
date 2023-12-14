@@ -116,14 +116,14 @@ $marcas=EjecutarConsulta($CadSql,$link);
 								<div class="row text-left">
 									<div class="col-sm-3">Largo Total</div>
 									<div class="col-sm-9">
-										<input type="number" name="largo" placeholder="Indique largo" id="largo">
+										<input type="number" step="any" name="largo" placeholder="Indique largo" id="largo">
 									</div>	
 								</div>
 
 								<div class="row text-left">
 									<div class="col-sm-3">Peso</div>
 									<div class="col-sm-9">
-										<input type="number" name="peso" placeholder="Indique peso" id="peso">
+										<input type="number" step="any" name="peso" placeholder="Indique peso" id="peso">
 									</div>	
 								</div>
 
