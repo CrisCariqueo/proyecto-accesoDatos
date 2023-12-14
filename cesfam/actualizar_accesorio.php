@@ -48,7 +48,7 @@
                 $CadSql.=" where cod_accesorio='".$id."';";
                 $mensaje="Producto modificado exitosamente";
             }
-            else if(isset($_POST["cmdEliminarPaciente"]))
+            else if(isset($_POST["cmdEliminarProducto"]))
             {
                 $CadSql="Delete from accesorio where cod_accesorio='".$id."';";
                 $mensaje="Producto eliminado correctamente";

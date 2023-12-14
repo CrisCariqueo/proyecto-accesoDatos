@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Accesorios</title>
+    <title>Listado de Equipamientos</title>
     <?php
     include("php/links.php");
     ?>
@@ -30,7 +30,7 @@
         <h1>Bienvenido a C&S Soluciones Armamentisticas</h1>
         <br><br>
         <div class="panel panel-primary text-left">
-            <div class="panel-heading text-center">Listado de Accesorios</div>
+            <div class="panel-heading text-center">Listado de Equipamientos</div>
             <div class="panel-body">
                 <div class="row">
                     <div class="col-sm-1">Codigo</div>
@@ -49,8 +49,8 @@
 
                 include("php/conexionBD.php");
                 $link=AbrirConexion();
-                $CadSql='Select a.cod_accesorio,a.nombre_accesorio, b.des_marca, a.stock_accesorio, a.precio_accesorio
-					from accesorio a, marca b
+                $CadSql='Select a.cod_equipamiento,a.nombre_equipamiento, b.des_marca, a.stock_equipamiento, a.precio_equipamiento
+					from equipamiento a, marca b
 					where a.cod_marca = b.cod_marca limit 0,50;';
                 $resultado=EjecutarConsulta($CadSql,$link);
                 while($fila=mysqli_fetch_array($resultado)){
@@ -58,11 +58,11 @@
                     ?>
                     <div class="row">
                         <hr>
-                        <div class="col-sm-1"><?php echo $fila["cod_accesorio"];?></div>
-                        <div class="col-sm-3"><?php echo $fila["nombre_accesorio"];?></div>
+                        <div class="col-sm-1"><?php echo $fila["cod_equipamiento"];?></div>
+                        <div class="col-sm-3"><?php echo $fila["nombre_equipamiento"];?></div>
                         <div class="col-sm-2"><?php echo $fila["des_marca"];?></div>
-                        <div class="col-sm-1"><?php echo $fila["stock_accesorio"];?></div>
-                        <div class="col-sm-1"><?php echo $fila["precio_accesorio"];?></div>
+                        <div class="col-sm-1"><?php echo $fila["stock_equipamiento"];?></div>
+                        <div class="col-sm-1"><?php echo $fila["precio_equipamiento"];?></div>
 
                     </div>
 

@@ -12,7 +12,7 @@ $Marca=EjecutarConsulta($CadSql,$link);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Accesorio</title>
+    <title>Buscar Equipamiento</title>
     <?php
     include("php/links.php");
     ?>
@@ -36,7 +36,7 @@ $Marca=EjecutarConsulta($CadSql,$link);
 </div>
 <div class="row contenido">
     <div class="col-sm-12 text-center">
-        <form name="frmPaciente" action="actualizar_accesorio.php" method="POST">
+        <form name="frmPaciente" action="actualizar_equipamiento.php" method="POST">
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
@@ -146,15 +146,15 @@ $Marca=EjecutarConsulta($CadSql,$link);
     {
         $.ajax({
             type:"POST",
-            url:"accesorio.php",
-            data:"cod_accesorio="+id,
+            url:"equipamiento.php",
+            data:"cod_equipamiento="+id,
             success:function(r){
                 var re=JSON.parse(r);
 
-                $("#txtNombre").val(re["nombre_accesorio"]);
+                $("#txtNombre").val(re["nombre_equipamiento"]);
                 $("#marca").val(re["cod_marca"]);
-                $('#cantidadStock').val(re["stock_accesorio"]);
-                $("#precio").val(re["precio_accesorio"]);
+                $('#cantidadStock').val(re["stock_equipamiento"]);
+                $("#precio").val(re["precio_equipamiento"]);
 
             }
         });
