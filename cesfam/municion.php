@@ -23,4 +23,4 @@ $r=json_encode($r);
 
 echo $r;
 CerrarConexion($link);
-?>
+
