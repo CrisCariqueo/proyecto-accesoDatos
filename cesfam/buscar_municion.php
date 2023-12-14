@@ -99,7 +99,7 @@ $bala=EjecutarConsulta($CadSql,$link);
                                     <input type="submit" id="cmdModificarProducto" name="cmdModificarProducto" class="btn btn-primary" value="Modificar Producto">
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="submit" id="cmdEliminarProducto" name="cmdEliminarPaciente" class="btn btn-primary" value="Eliminar Producto">
+                                    <input type="submit" id="cmdEliminarProducto" name="cmdEliminarProducto" class="btn btn-primary" value="Eliminar Producto">
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="buton" class="btn btn-success" value="Limpiar"

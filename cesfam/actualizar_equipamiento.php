@@ -34,25 +34,23 @@
             include "php/conexionBD.php";
             $link=AbrirConexion();
             $id=$_POST["ID"];
-            $bala=$_POST["calibre"];
-            $balas=$_POST["numBalas"];
+            $marca=$_POST["marca"];
             $nombre=$_POST["txtNombre"];
             $stock=$_POST["cantidadStock"];
             $precio=$_POST["precio"];
             if(isset($_POST["cmdModificarProducto"]))
             {
-                $CadSql="update municion set ";
-                $CadSql.=" cod_bala='".$bala."',";
-                $CadSql.=" cantidad_caja_municion='".$balas."',";
-                $CadSql.=" nombre_municion='".$nombre."',";
-                $CadSql.=" stock_municion='".$stock."',";
-                $CadSql.=" precio_municion='".$precio."' ";
-                $CadSql.=" where cod_municion='".$id."';";
+                $CadSql="update equipamiento set ";
+                $CadSql.=" cod_marca='".$marca."',";
+                $CadSql.=" nombre_equipamiento='".$nombre."',";
+                $CadSql.=" stock_equipamiento='".$stock."',";
+                $CadSql.=" precio_equipamiento='".$precio."' ";
+                $CadSql.=" where cod_equipamiento='".$id."';";
                 $mensaje="Producto modificado exitosamente";
             }
             else if(isset($_POST["cmdEliminarProducto"]))
             {
-                $CadSql="Delete from municion where cod_municion='".$id."';";
+                $CadSql="Delete from equipamiento where cod_equipamiento='".$id."';";
                 $mensaje="Producto eliminado correctamente";
             }
             else

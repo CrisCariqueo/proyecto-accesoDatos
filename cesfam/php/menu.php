@@ -28,9 +28,9 @@
 
     <li><a href="#">Equipamiento</a>
 			<ul>
-				<li><a href="#">Registro</a></li>
-				<li><a href="#">Buscar</a></li>
-				<li><a href="#">Listado</a></li>
+				<li><a href="reg_equipamiento.php">Registro</a></li>
+				<li><a href="buscar_equipamiento.php">Buscar</a></li>
+				<li><a href="listado_equipamiento.php">Listado</a></li>
 			</ul>
 		</li>
 	</ul>
