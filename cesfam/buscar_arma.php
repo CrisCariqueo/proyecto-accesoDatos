@@ -33,13 +33,6 @@ $marcas=EjecutarConsulta($CadSql,$link);
 		</div>
 	</div>
 
-	<div class="row contenido segundo_plano">
-		<div class="col-sm-12 text-center">
-			<h1>BUSCAR ARMA</h1>
-			<br><br>
-		</div>
-	</div>
-
 	<div class="row menu">
 		<div class="col-sm-12">
 			<?php 

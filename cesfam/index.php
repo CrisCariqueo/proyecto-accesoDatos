@@ -10,11 +10,11 @@
 	<link href="css/estilo.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="row contenido segundo_plano">
-		<div class="col-sm-12 text-center">
-			<h1>BIENVENIDO AL SISTEMA DE GESTIÓN DE<br>
-			C&S SOLUCIONES ARMAMENTISTICAS</h1>
-			<br><br>
+	<div class="row banner">
+		<div class="col-sm-12">
+			<?php 
+			include("php/banner.php");
+			?>
 		</div>
 	</div>
 
@@ -27,11 +27,11 @@
 		</div>
 	</div>
 
-	<div class="row banner">
-		<div class="col-sm-12">
-			<?php 
-			include("php/banner.php");
-			?>
+	<div class="row contenido segundo_plano">
+		<div class="col-sm-12 text-center">
+			<h1>BIENVENIDO AL SISTEMA DE GESTIÓN DE<br>
+			C&S SOLUCIONES ARMAMENTISTICAS</h1>
+			<br><br>
 		</div>
 	</div>
 
