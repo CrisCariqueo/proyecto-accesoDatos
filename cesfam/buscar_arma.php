@@ -6,7 +6,7 @@ $CadSql="Select a.cod_categoria_arma, a.des_categoria_arma from categoria_arma a
 $categoria_arma=EjecutarConsulta($CadSql,$link);
 
 $CadSql="Select a.cod_bala, a.calibre_municion from bala a;";
-$balas=EjecutarConsulta($CadSql,$link);
+$bala=EjecutarConsulta($CadSql,$link);
 
 $CadSql="Select a.cod_marca, a.des_marca from marca a;";
 $marcas=EjecutarConsulta($CadSql,$link);
@@ -78,7 +78,7 @@ $marcas=EjecutarConsulta($CadSql,$link);
 								<div class="row text-left">
 									<div class="col-sm-3">Categoría Arma</div>
 									<div class="col-sm-9">
-										<select name="cboCategoriaArma" id="cboCategoriaArma" required="required">
+										<select name="categoria" id="categoria" required="required">
 											<option value="">Seleccione categoria</option>
 											<?php
 											while($fila=mysqli_fetch_array($categoria_arma))
@@ -96,12 +96,12 @@ $marcas=EjecutarConsulta($CadSql,$link);
 								</div>
 
 								<div class="row text-left">
-									<div class="col-sm-3">Tipo Bala</div>
+									<div class="col-sm-3">Calibre</div>
 									<div class="col-sm-9">
-										<select name="cboBala" id="cboBala" required="required">
-											<option value="">Seleccione tipo de bala</option>
+										<select name="calibre" id="calibre" required="required">
+											<option value="">Seleccione Calibre</option>
 											<?php
-											while($fila=mysqli_fetch_array($balas))
+											while($fila=mysqli_fetch_array($bala))
 											{
 												?>
 												<option value="<?php echo $fila["cod_bala"];?>">
@@ -117,21 +117,21 @@ $marcas=EjecutarConsulta($CadSql,$link);
 								<div class="row text-left">
 									<div class="col-sm-3">Largo Total</div>
 									<div class="col-sm-9">
-										<input type="number" name="txtLargo" placeholder="Indique largo" id="txtLargo" step="any">
+										<input type="number" name="largo" placeholder="Indique largo" id="largo" step="any">
 									</div>	
 								</div>
 
 								<div class="row text-left">
 									<div class="col-sm-3">Peso</div>
 									<div class="col-sm-9">
-										<input type="number" name="txtPeso" placeholder="Indique peso" id="txtPeso" step="any">
+										<input type="number" name="peso" placeholder="Indique peso" id="peso" step="any">
 									</div>	
 								</div>
 
 								<div class="row text-left">
 									<div class="col-sm-3">Marca</div>
 									<div class="col-sm-9">
-										<select name="cboMarca" id="cboMarca" required="required">
+										<select name="marca" id="marca" required="required">
 											<option value="">Seleccione marca</option>
 											<?php
 											while($fila=mysqli_fetch_array($marcas))
@@ -157,7 +157,7 @@ $marcas=EjecutarConsulta($CadSql,$link);
 								<div class="row text-left">
 									<div class="col-sm-3">Precio</div>
 									<div class="col-sm-9">
-										<input type="number" name="txtPrecio" placeholder="Indique precio" id="txtPrecio">
+										<input type="number" name="precio" placeholder="Indique precio" id="precio">
 									</div>	
 								</div>
 
@@ -203,8 +203,8 @@ $marcas=EjecutarConsulta($CadSql,$link);
 			Limpiar();
 		});
 		$("#cmdBuscar").click(function(){
-			var cod=$("#ID").val();
-			BuscarArma(cod);
+			var id=$("#ID").val();
+			BuscarProducto(id);
 		});
 	});	
 </script>
@@ -212,32 +212,32 @@ $marcas=EjecutarConsulta($CadSql,$link);
 	function Limpiar()
 	{
 		$("#ID").val("");
-		$('#txtNombre').val("");
-		$("#cboCategoriaArma").val("");
-		$("#cboBala").val("");
-		$("#txtLargo").val(0);
-		$("#txtPeso").val(0);
-		$("#cboMarca").val("");
-		$("#cantidadStock").val(0);
-		$("#txtPrecio").val(0);
+		$("#txtNombre").val("");
+		$("#categoria").val("");
+		$("#calibre").val("");
+		$("#largo").val("");
+		$("#peso").val("");
+		$("#marca").val("");
+		$('#cantidadStock').val("");
+		$("#txtPrecio").val("");
 	}
 
-	function BuscarArma(cod)
+	function BuscarProducto(id)
 	{
 		$.ajax({
 			type:"POST",
 			url:"arma.php",
-			data:"cod="+cod,
+			data:"cod_arma="+id,
 			success:function(r){
 				var re=JSON.parse(r);
 				$("#txtNombre").val(re["nombre_arma"]);
-				$("#cboCategoriaArma").val(re["cod_categoria_arma"]);
-				$("#cboBala").val(re["cod_bala"]);
-				$("#txtLargo").val(re["largo_total_arma"]);
-				$("#txtPeso").val(re["peso_arma"]);
-				$("#cboMarca").val(re["cod_marca"]);
-				$("#txtStock").val(re["stock_arma"]);
-				$("#txtPrecio").val(re["precio_arma"]);
+				$("#categoria").val(re["cod_categoria_arma"]);
+				$("#calibre").val(re["cod_bala"]);
+				$("#largo").val(re["largo_total_arma"]);
+				$("#peso").val(re["peso_arma"]);
+				$("#marca").val(re["cod_marca"]);
+				$('#cantidadStock').val(re["stock_arma"]);
+				$("#precio").val(re["precio_arma"]);
 			}
 		});
 	}
