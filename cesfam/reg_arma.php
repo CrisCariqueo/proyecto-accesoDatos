@@ -7,7 +7,7 @@ $bala=EjecutarConsulta($CadSql,$link);
 
 $CadSql="Select a.cod_categoria_arma, a.des_categoria_arma from categoria_arma a;";
 
-$categoria_arma=EjecutarConsulta($CadSql,$link);
+$categoria=EjecutarConsulta($CadSql,$link);
 
 ?>
 
@@ -41,19 +41,13 @@ $categoria_arma=EjecutarConsulta($CadSql,$link);
 	
 	<div class="row contenido">
 		<div class="col-sm-12 text-center">
-			<form name="frmPaciente" action="guardar_paciente.php" method="POST">
+			<form name="frmPaciente" action="guardar_arma.php" method="POST">
 				<div class="row">
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
 						<div class="panel panel-primary">
-							<div class="panel-heading text-center">REGISTRO DE PACIENTES</div>
+							<div class="panel-heading text-center">REGISTRO DE PRODUCTO(ARMAS)</div>
 							<div class="panel-body">
-								<div class="row text-left">
-									<div class="col-sm-3">Rut</div>
-									<div class="col-sm-9">
-										<input required="required" type="text" name="txtRut" placeholder="Indique rut" id="txtRut">
-									</div>	
-								</div>
 
 								<div class="row text-left">
 									<div class="col-sm-3">Nombre</div>
@@ -63,114 +57,96 @@ $categoria_arma=EjecutarConsulta($CadSql,$link);
 								</div>
 
 								<div class="row text-left">
-									<div class="col-sm-3">Paterno</div>
+									<div class="col-sm-3">Categoria Arma</div>
 									<div class="col-sm-9">
-										<input type="text" name="txtPaterno" placeholder="Indique apellido paterno" id="txtPaterno">
-									</div>	
-								</div>
-
-								<div class="row text-left">
-									<div class="col-sm-3">Materno</div>
-									<div class="col-sm-9">
-										<input type="text" name="txtMaterno" placeholder="Indique apellido materno" id="txtMaterno">
-									</div>	
-								</div>
-
-								<div class="row text-left">
-									<div class="col-sm-3">Dirección</div>
-									<div class="col-sm-9">
-										<input type="text" name="txtDireccion" placeholder="Indique dirección" id="txtDireccion">
-									</div>	
-								</div>
-
-								<div class="row text-left">
-									<div class="col-sm-3">Fecha Nacto.</div>
-									<div class="col-sm-9">
-										<input type="date" name="txtFechaNacto" placeholder="Indique fecha" id="txtFechaNacto" required="required">
-									</div>	
-								</div>
-
-								<div class="row text-left">
-									<div class="col-sm-3">Edad</div>
-									<div class="col-sm-9">
-										<input type="number" name="txtEdad" placeholder="Indique edad" id="txtEdad" min="0" max="99">
-									</div>	
-								</div>
-
-								<div class="row text-left">
-									<div class="col-sm-3">Teléfono</div>
-									<div class="col-sm-9">
-										<input type="text" name="txtTelefono" placeholder="Indique teléfono" id="txtTelefono">
-									</div>	
-								</div>
-
-								<div class="row text-left">
-									<div class="col-sm-3">Email</div>
-									<div class="col-sm-9">
-										<input type="text" name="txtEmail" placeholder="Indique email" id="txtEmail">
-									</div>	
-								</div>
-
-								<div class="row text-left">
-									<div class="col-sm-3">Tipo Sangre</div>
-									<div class="col-sm-9">
-										<select name="cboTipoSangre" id="cboTipoSangre" required="required">
-											<option value="">Seleccione tipo sangre</option>
+										<select name="categoria" id="categoria" required="required">
+											<option value="">Seleccione Categoria</option>
 											<?php
-											while($fila=mysqli_fetch_array($tipo_sangre))
+											while($fila=mysqli_fetch_array($categoria))
 											{
 												?>
 
-												<option value="<?php echo $fila["cod_tipo_sangre"];?>">
-													<?php echo $fila["des_tipo_sangre"];?>
+												<option value="<?php echo $fila["cod_categoria_arma"];?>">
+													<?php echo $fila["des_categoria_arma"];?>
 												</option>
 												<?php
 											}
 											?>
 										</select>
-									</div>	
-								</div>
+									</div>
+                            	</div>
 
 								<div class="row text-left">
-									<div class="col-sm-3">Región</div>
+									<div class="col-sm-3">Calibre</div>
 									<div class="col-sm-9">
-										<select name="cboRegion" id="cboRegion">
-											<option value="">Seleccione región</option>
+										<select name="calibre" id="calibre" required="required">
+											<option value="">Seleccione Calibre</option>
 											<?php
-											while($fila=mysqli_fetch_array($regiones))
+											while($fila=mysqli_fetch_array($bala))
 											{
 												?>
-												<option value="<?php echo $fila["cod_region"];?>">
-													<?php echo $fila["des_region"];?>
+
+												<option value="<?php echo $fila["cod_bala"];?>">
+													<?php echo $fila["calibre_municion"];?>
 												</option>
 												<?php
 											}
 											?>
 										</select>
+									</div>
+                           		</div>
+
+								<div class="row text-left">
+									<div class="col-sm-3">Largo Arma</div>
+									<div class="col-sm-9">
+										<input type="number" name="largo" placeholder="Indique largo del arma" id="largo">
 									</div>	
 								</div>
 
 								<div class="row text-left">
-									<div class="col-sm-3">Provincia</div>
+									<div class="col-sm-3">Peso Arma</div>
 									<div class="col-sm-9">
-										<select name="cboProvincia" id="cboProvincia">
-											<option value="">Seleccione provincia</option>
-										</select>
+										<input type="number" name="peso" placeholder="Indique peso del arma" id="peso">
 									</div>	
 								</div>
 
 								<div class="row text-left">
-									<div class="col-sm-3">Ciudad</div>
+									<div class="col-sm-3">Marca</div>
 									<div class="col-sm-9">
-										<select name="cboCiudad" id="cboCiudad">
-											<option value="">Seleccione ciudad</option>
+										<select name="marca" id="marca" required="required">
+											<option value="">Seleccione Marca</option>
+											<?php
+											while($fila=mysqli_fetch_array($marca))
+											{
+												?>
+
+												<option value="<?php echo $fila["cod_marca"];?>">
+													<?php echo $fila["des_marca"];?>
+												</option>
+												<?php
+											}
+											?>
 										</select>
-									</div>	
+									</div>
+                            	</div>
+
+								<div class="row text-left">
+									<div class="col-sm-3">Stock</div>
+									<div class="col-sm-9">
+										<input type="number" name="numProducto" placeholder="Indique existencias" id="numProducto">
+									</div>
+								</div>
+
+								<div class="row text-left">
+									<div class="col-sm-3">Precio</div>
+									<div class="col-sm-9">
+										<input type="number" name="Precio" placeholder="Indique Precio" id="Precio">
+									</div>
 								</div>
 
 								<div class="row text-left">
 									<div class="col-sm-6">
-										<input type="submit" name="cmdEnviar" value="Guardar Paciente" class="btn btn-primary">
+										<input type="submit" name="cmdEnviar" value="Guardar Producto" class="btn btn-primary">
 									</div>
 									<div class="col-sm-6">
 										<input type="reset" name="cmdLimpiar" class="btn btn-success" value="Limpiar Formulario">
@@ -197,44 +173,3 @@ $categoria_arma=EjecutarConsulta($CadSql,$link);
 	</div>
 </body>
 </html>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$("#cboRegion").change(function(){
-			//alert("change region");			
-			LlenarProvincias();
-		});
-		$("#cboProvincia").change(function(){
-			//alert("change provincia");
-			LlenarCiudades();
-		});
-	});	
-</script>
-<script type="text/javascript">
-	function LlenarProvincias()
-	{
-		var codRegion=$("#cboRegion").val();
-		$.ajax({
-			type:"POST",
-			url:"provincias.php",
-			data:"region="+codRegion,
-			success:function(r){
-				//alert(r);
-				$('#cboProvincia').html(r);
-			}
-		});
-	}
-
-	function LlenarCiudades()
-	{
-		var codProvincia=$("#cboProvincia").val();
-		$.ajax({
-			type:"POST",
-			url:"ciudades.php",
-			data:"provincia="+codProvincia,
-			success:function(r){
-				//alert(r);
-				$('#cboCiudad').html(r);
-			}
-		});
-	}
-</script>
