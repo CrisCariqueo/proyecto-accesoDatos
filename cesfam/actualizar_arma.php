@@ -58,7 +58,7 @@
 						$CadSql.=" where cod_arma='".$id."';";
 						$mensaje="Producto modificado exitosamente";
 					}
-					else if(isset($_POST["cmdEliminarPaciente"]))
+					else if(isset($_POST["cmdEliminarProducto"]))
 					{
 						$CadSql="Delete from arma where cod_arma='".$id."';";
 						$mensaje="Producto eliminado correctamente";
@@ -85,7 +85,7 @@
 			}
 			else
 			{
-				header("location: buscar_paciente.php");
+				header("location: buscar_arma.php");
 			}
 			?>
 		</div>

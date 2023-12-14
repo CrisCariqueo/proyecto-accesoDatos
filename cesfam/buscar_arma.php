@@ -51,7 +51,7 @@ $marcas=EjecutarConsulta($CadSql,$link);
 
 	<div class="row contenido">
 		<div class="col-sm-12 text-center">
-			<form name="frmPaciente" action="actualizar_paciente.php" method="POST">
+			<form name="frmPaciente" action="actualizar_arma.php" method="POST">
 				<div class="row">
 					<div class="col-sm-3"></div>
 					<div class="col-sm-6">
@@ -218,11 +218,13 @@ $marcas=EjecutarConsulta($CadSql,$link);
 		$("#peso").val("");
 		$("#marca").val("");
 		$('#cantidadStock').val("");
-		$("#txtPrecio").val("");
+		$("#precio").val("");
+
 	}
 
 	function BuscarProducto(id)
 	{
+
 		$.ajax({
 			type:"POST",
 			url:"arma.php",
