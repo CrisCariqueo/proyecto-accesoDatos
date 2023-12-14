@@ -13,8 +13,8 @@
 		<li><a href="#">Municion</a>
 			<ul>
 				<li><a href="#">Registro</a></li>
-				<li><a href="#">Buscar</a></li>
-				<li><a href="#">Listado</a></li>
+				<li><a href="buscar_municion.php">Buscar</a></li>
+				<li><a href="listado_municion.php">Listado</a></li>
 			</ul>
 		</li>
 
