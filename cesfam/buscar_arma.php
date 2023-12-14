@@ -2,11 +2,9 @@
 include("php/conexionBD.php");
 $link=AbrirConexion();
 $CadSql="Select a.cod_categoria_arma, a.des_categoria_arma from categoria_arma a;";
-
 $categoria_arma=EjecutarConsulta($CadSql,$link);
 
 $CadSql="Select a.cod_bala, a.calibre_municion from bala a;";
-
 $bala=EjecutarConsulta($CadSql,$link);
 
 $CadSql="Select a.cod_marca, a.des_marca from marca a;";
