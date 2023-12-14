@@ -15,18 +15,18 @@ $resultado=EjecutarConsulta($CadSql,$link);
 $r=array();
 while($fila=mysqli_fetch_array($resultado))
 {
-	$r["rut_paciente"]=$fila["rut_paciente"];
-	$r["nombre_paciente"]=$fila["nombre_paciente"];
+	$r["rut_paciente"]	  =$fila["rut_paciente"];
+	$r["nombre_paciente"] =$fila["nombre_paciente"];
 	$r["paterno_paciente"]=$fila["paterno_paciente"];
 	$r["materno_paciente"]=$fila["materno_paciente"];
-	$r["direccion"]=$fila["direccion"];
-	$r["telefono"]=$fila["telefono"];
-	$r["email"]=$fila["email"];
-	$r["fecha_nacto"]=$fila["fecha_nacto"];
-	$r["cod_tipo_sangre"]=$fila["cod_tipo_sangre"];
-	$r["cod_ciudad"]=$fila["cod_ciudad"];
-	$r["cod_provincia"]=$fila["cod_provincia"];
-	$r["cod_region"]=$fila["cod_region"];
+	$r["direccion"]		  =$fila["direccion"];
+	$r["telefono"]		  =$fila["telefono"];
+	$r["email"]			  =$fila["email"];
+	$r["fecha_nacto"]	  =$fila["fecha_nacto"];
+	$r["cod_tipo_sangre"] =$fila["cod_tipo_sangre"];
+	$r["cod_ciudad"]      =$fila["cod_ciudad"];
+	$r["cod_provincia"]	  =$fila["cod_provincia"];
+	$r["cod_region"]	  =$fila["cod_region"];
 }
 $r=json_encode($r);
 

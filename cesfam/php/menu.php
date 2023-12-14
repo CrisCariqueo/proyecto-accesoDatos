@@ -2,7 +2,7 @@
 	<ul id="menu_principal">
     <li><a href="index.php">Inicio</a></li>
 
-		<li><a href="armas.php">Armas</a>
+		<li><a href="#">Armas</a>
 			<ul>
 				<li><a href="reg_arma.php">Registro</a></li>
 				<li><a href="buscar_arma.php">Buscar</a></li>
