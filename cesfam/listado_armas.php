@@ -20,7 +20,7 @@
 
     <div class="row menu">
 		<div class="col-sm-12">
-			<?php 
+			<?php
 			include("php/menu.php");
 			?>
 			<br><br>
