@@ -57,7 +57,8 @@
                     $link=AbrirConexion();
                     $CadSql="Select a.cod_arma, a.nombre_arma, d.des_categoria_arma, c.calibre_municion, a.largo_total_arma, a.peso_arma, b.des_marca, a.stock_arma, a.precio_arma
                         from arma a, marca b, bala c, categoria_arma d 
-                        where a.cod_categoria_arma = d.cod_categoria_arma AND a.cod_bala = c.cod_bala AND a.cod_marca = b.cod_marca;";
+                        where a.cod_categoria_arma = d.cod_categoria_arma AND a.cod_bala = c.cod_bala AND a.cod_marca = b.cod_marca 
+                        group by a.cod_arma;";
                     $resultado=EjecutarConsulta($CadSql,$link);
                     while($fila=mysqli_fetch_array($resultado)){
 
