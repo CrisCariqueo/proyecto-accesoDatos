@@ -4,7 +4,7 @@ function AbrirConexion()
 	$servidor="localhost";
 	$usuario="root";
 	$clave="";
-	$bd="bd_cesfam2";
+	$bd="bd_armeria";
 	@$link=mysqli_connect($servidor,$usuario,$clave,$bd);
 	if(!$link)
 	{
