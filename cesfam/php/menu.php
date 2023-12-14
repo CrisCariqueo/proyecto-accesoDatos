@@ -20,9 +20,9 @@
 
 		<li><a href="#">Accesorios</a>
 			<ul>
-				<li><a href="#">Registro</a></li>
-				<li><a href="#">Buscar</a></li>
-				<li><a href="#">Listado</a></li>
+				<li><a href="reg_accesorio.php">Registro</a></li>
+				<li><a href="buscar_accesorio.php">Buscar</a></li>
+				<li><a href="listado_accesorio.php">Listado</a></li>
 			</ul>
 		</li>
 
