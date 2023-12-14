@@ -45,19 +45,25 @@
                         <div class="col-sm-2">Stock</div>
                         <div class="col-sm-2">Precio</div>
                     </div>
-                    <br>
                     <?php 
+
+                    $pag=0;
+                    if(isset($_GET["pag"])){
+                        $pag=$_GET["pag"];
+                        $pag++;
+                    }
+
                     include("php/conexionBD.php");
                     $link=AbrirConexion();
                     $CadSql="Select a.cod_arma, a.nombre_arma, d.des_categoria_arma, c.calibre_municion, a.largo_total_arma, a.peso_arma, b.des_marca, a.stock_arma, a.precio_arma
-                    from arma a, marca b, bala c, categoria_arma d where a.cod_categoria_arma = d.cod_categoria_arma AND a.cod_bala = c.cod_bala AND a.cod_marca = b.cod_marca;";
+                        from arma a, marca b, bala c, categoria_arma d 
+                        where a.cod_categoria_arma = d.cod_categoria_arma AND a.cod_bala = c.cod_bala AND a.cod_marca = b.cod_marca;";
                     $resultado=EjecutarConsulta($CadSql,$link);
-                    while($fila=mysqli_fetch_array($resultado))
-                    {
+                    while($fila=mysqli_fetch_array($resultado)){
 
                         ?>
-                        <hr>
                         <div class="row">
+                            <hr>
                             <div class="col-sm-1"><?php echo $fila["cod_arma"];?></div>
                             <div class="col-sm-2"><?php echo $fila["nombre_arma"];?></div>
                             <div class="col-sm-1"><?php echo $fila["des_categoria_arma"];?></div>
