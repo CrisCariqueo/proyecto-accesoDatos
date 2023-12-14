@@ -1,11 +1,12 @@
 <?php
 include("php/conexionBD.php");
 $link=AbrirConexion();
-
 $CadSql="Select a.cod_categoria_arma, a.des_categoria_arma from categoria_arma a;";
+
 $categoria_arma=EjecutarConsulta($CadSql,$link);
 
 $CadSql="Select a.cod_bala, a.calibre_municion from bala a;";
+
 $bala=EjecutarConsulta($CadSql,$link);
 
 $CadSql="Select a.cod_marca, a.des_marca from marca a;";
@@ -117,14 +118,14 @@ $marcas=EjecutarConsulta($CadSql,$link);
 								<div class="row text-left">
 									<div class="col-sm-3">Largo Total</div>
 									<div class="col-sm-9">
-										<input type="number" name="largo" placeholder="Indique largo" id="largo" step="any">
+										<input type="number" name="largo" placeholder="Indique largo" id="largo">
 									</div>	
 								</div>
 
 								<div class="row text-left">
 									<div class="col-sm-3">Peso</div>
 									<div class="col-sm-9">
-										<input type="number" name="peso" placeholder="Indique peso" id="peso" step="any">
+										<input type="number" name="peso" placeholder="Indique peso" id="peso">
 									</div>	
 								</div>
 
