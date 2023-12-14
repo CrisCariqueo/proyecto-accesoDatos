@@ -10,6 +10,14 @@
 	<link href="css/estilo.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+	<div class="row banner">
+		<div class="col-sm-12">
+			<?php 
+			include("php/banner.php");
+			?>
+		</div>
+	</div>
+
 	<div class="row menu">
 		<div class="col-sm-12">
 			<?php 
@@ -22,43 +30,38 @@
 		<div class="col-sm-4 text-center"></div>
 		<div class="col-sm-4 text-center">
 			<?php 
-			if(isset($_POST["txtRut"]))
+			if(isset($_POST["ID"]))
 			{
 				include "php/conexionBD.php";
 				$link=AbrirConexion();
-				$rut=$_POST["txtRut"];
+				$id=$_POST["ID"];
 				$nombre=$_POST["txtNombre"];
-				$paterno=$_POST["txtPaterno"];
-				$materno=$_POST["txtMaterno"];
-				$direccion=$_POST["txtDireccion"];
-				$fechaNacto=$_POST["txtFechaNacto"];
-				$telefono=$_POST["txtTelefono"];
-				$email=$_POST["txtEmail"];
-				$tipoSangre=$_POST["cboTipoSangre"];
-				$ciudad=$_POST["cboCiudad"];
-					//dar formato a la fecha año-mes-dia
-				$fechaNacto=date('Y-m-d', strtotime($fechaNacto));
+				$categoria=$_POST["categoria"];
+				$bala=$_POST["calibre"];
+				$largo=$_POST["largo"];
+				$peso=$_POST["peso"];
+				$marca=$_POST["marca"];
+				$stock=$_POST["cantidadStock"];
+				$precio=$_POST["precio"];
 
-				if(isset($_POST["cmdModificarPaciente"]))
+				if(isset($_POST["cmdModificarProducto"]))
 					{
-						$CadSql="update paciente set ";
-						$CadSql.=" nombre_paciente='".$nombre."',";
-						$CadSql.=" paterno_paciente='".$paterno."',";
-						$CadSql.=" materno_paciente='".$materno."',";
-						$CadSql.=" direccion='".$direccion."',";
-						$CadSql.=" telefono='".$telefono."',";
-						$CadSql.=" fecha_nacto='".$fechaNacto."',";
-						$CadSql.=" cod_tipo_sangre='".$tipoSangre."',";
-						$CadSql.=" cod_ciudad='".$ciudad."' ";
-						$CadSql.=" where rut_paciente='".$rut."';";
-						//$exito=EjecutarIUD($CadSql,$link);
-						$mensaje="Paciente modificado exitosamente";
+						$CadSql="update arma set ";
+						$CadSql.=" nombre_arma='".$nombre."',";
+						$CadSql.=" cod_categoria_arma='".$categoria."',";
+						$CadSql.=" cod_bala='".$bala."',";
+						$CadSql.=" largo_total_arma='".$largo."',";
+						$CadSql.=" peso_arma='".$peso."',";
+						$CadSql.=" cod_marca='".$marca."',";
+						$CadSql.=" stock_arma='".$stock."',";
+						$CadSql.=" precio_arma='".$precio."' ";
+						$CadSql.=" where cod_arma='".$id."';";
+						$mensaje="Producto modificado exitosamente";
 					}
 					else if(isset($_POST["cmdEliminarPaciente"]))
 					{
-						$CadSql="Delete from paciente where rut_paciente='".$rut."';";
-						//$exito=EjecutarIUD($CadSql,$link);
-						$mensaje="Paciente eliminado correctamente";
+						$CadSql="Delete from arma where cod_arma='".$id."';";
+						$mensaje="Producto eliminado correctamente";
 					}
 					else
 					{
@@ -87,14 +90,6 @@
 			?>
 		</div>
 		<div class="col-sm-4 text-center"></div>
-	</div>
-
-    <div class="row banner">
-		<div class="col-sm-12">
-			<?php 
-			include("php/banner.php");
-			?>
-		</div>
 	</div>
 
 	<div class="row pie">
