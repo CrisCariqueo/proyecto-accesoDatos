@@ -45,28 +45,28 @@
 				$precio=$_POST["precio"];
 
 				if(isset($_POST["cmdModificarProducto"]))
-					{
-						$CadSql="update arma set ";
-						$CadSql.=" nombre_arma='".$nombre."',";
-						$CadSql.=" cod_categoria_arma='".$categoria."',";
-						$CadSql.=" cod_bala='".$bala."',";
-						$CadSql.=" largo_total_arma='".$largo."',";
-						$CadSql.=" peso_arma='".$peso."',";
-						$CadSql.=" cod_marca='".$marca."',";
-						$CadSql.=" stock_arma='".$stock."',";
-						$CadSql.=" precio_arma='".$precio."' ";
-						$CadSql.=" where cod_arma='".$id."';";
-						$mensaje="Producto modificado exitosamente";
-					}
-					else if(isset($_POST["cmdEliminarPaciente"]))
-					{
-						$CadSql="Delete from arma where cod_arma='".$id."';";
-						$mensaje="Producto eliminado correctamente";
-					}
-					else
-					{
-						header("location: buscar_evento.php");
-					}
+				{
+					$CadSql="update arma set ";
+					$CadSql.=" nombre_arma='".$nombre."',";
+					$CadSql.=" cod_categoria_arma='".$categoria."',";
+					$CadSql.=" cod_bala='".$bala."',";
+					$CadSql.=" largo_total_arma='".$largo."',";
+					$CadSql.=" peso_arma='".$peso."',";
+					$CadSql.=" cod_marca='".$marca."',";
+					$CadSql.=" stock_arma='".$stock."',";
+					$CadSql.=" precio_arma='".$precio."' ";
+					$CadSql.=" where cod_arma='".$id."';";
+					$mensaje="Producto modificado exitosamente";
+				}
+				else if(isset($_POST["cmdEliminarProducto"]))
+				{
+					$CadSql="Delete from arma where cod_arma='".$id."';";
+					$mensaje="Producto eliminado correctamente";
+				}
+				else
+				{
+					header("location: buscar_evento.php");
+				}
 				//echo $CadSql;
 				$exito=EjecutarIUD($CadSql,$link);
 				
@@ -85,7 +85,7 @@
 			}
 			else
 			{
-				header("location: buscar_paciente.php");
+				header("location: buscar_arma.php");
 			}
 			?>
 		</div>
