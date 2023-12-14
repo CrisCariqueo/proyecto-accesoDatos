@@ -26,7 +26,7 @@
 			</ul>
 		</li>
 
-    <li><a href="#">Equipamiento</a>
+    	<li><a href="#">Equipamiento</a>
 			<ul>
 				<li><a href="reg_equipamiento.php">Registro</a></li>
 				<li><a href="buscar_equipamiento.php">Buscar</a></li>
