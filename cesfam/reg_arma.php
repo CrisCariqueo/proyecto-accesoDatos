@@ -103,14 +103,14 @@ $marca=EjecutarConsulta($CadSql,$link);
 								<div class="row text-left">
 									<div class="col-sm-3">Largo Arma</div>
 									<div class="col-sm-9">
-										<input type="number" name="largo" placeholder="Indique largo del arma" id="largo">
+										<input type="number" name="largo" placeholder="Indique largo del arma" id="largo" step="any">
 									</div>	
 								</div>
 
 								<div class="row text-left">
 									<div class="col-sm-3">Peso Arma</div>
 									<div class="col-sm-9">
-										<input type="number" name="peso" placeholder="Indique peso del arma" id="peso">
+										<input type="number" name="peso" placeholder="Indique peso del arma" id="peso" step="any">
 									</div>	
 								</div>
 
