@@ -33,20 +33,20 @@
             <div class="row">
                 <div class="col-sm-1">Cod.Arma</div>
                 <div class="col-sm-2">Arma</div>
-                <div class="col-sm-1">Cod.Categoria_Arma</div>
-                <div class="col-sm-1">Cod.Bala</div>
-                <div class="col-sm-1">Largo_Total_Arma</div>
-                <div class="col-sm-1">Peso_Arma</div>
-                <div class="col-sm-1">Cod.Marca</div>
-                <div class="col-sm-2">Stock_Arma</div>
-                <div class="col-sm-2">Precio_arma</div>
+                <div class="col-sm-1">Categoria</div>
+                <div class="col-sm-1">Bala</div>
+                <div class="col-sm-1">Largo Total</div>
+                <div class="col-sm-1">Peso </div>
+                <div class="col-sm-1">Marca</div>
+                <div class="col-sm-2">Stock</div>
+                <div class="col-sm-2">Precio</div>
             </div>
             <br>
             <?php 
             include("php/conexionBD.php");
             $link=AbrirConexion();
-            $CadSql="Select a.cod_arma, a.nombre_arma, a.cod_categoria_arma, a.cod_bala, a.largo_total_arma, a.peso_arma, a.cod_marca, a.stock_arma, a.precio_arma
-            from arma a";
+            $CadSql="Select a.cod_arma, a.nombre_arma, d.des_categoria_arma, c.calibre_municion, a.largo_total_arma, a.peso_arma, b.des_marca, a.stock_arma, a.precio_arma
+            from arma a, marca b, bala c, categoria_arma d where a.cod_categoria_arma = d.cod_categoria_arma AND a.cod_bala = c.cod_bala AND a.cod_marca = b.cod_marca;";
             $resultado=EjecutarConsulta($CadSql,$link);
             while($fila=mysqli_fetch_array($resultado))
             {
@@ -56,11 +56,11 @@
                 <div class="row">
                     <div class="col-sm-1"><?php echo $fila["cod_arma"];?></div>
                     <div class="col-sm-2"><?php echo $fila["nombre_arma"];?></div>
-                    <div class="col-sm-1"><?php echo $fila["cod_categoria_arma"];?></div>
-                    <div class="col-sm-1"><?php echo $fila["cod_bala"];?></div>
+                    <div class="col-sm-1"><?php echo $fila["des_categoria_arma"];?></div>
+                    <div class="col-sm-1"><?php echo $fila["calibre_municion"];?></div>
                     <div class="col-sm-1"><?php echo $fila["largo_total_arma"];?></div>
                     <div class="col-sm-1"><?php echo $fila["peso_arma"];?></div>
-                    <div class="col-sm-1"><?php echo $fila["cod_marca"];?></div>
+                    <div class="col-sm-1"><?php echo $fila["des_marca"];?></div>
                     <div class="col-sm-2"><?php echo $fila["stock_arma"];?></div>
                     <div class="col-sm-2"><?php echo $fila["precio_arma"];?></div>
                 </div>
